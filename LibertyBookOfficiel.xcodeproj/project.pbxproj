@@ -11,6 +11,11 @@
 		BA2EDB5A29CA07400055A719 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB5929CA07400055A719 /* ContentView.swift */; };
 		BA2EDB5C29CA07420055A719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2EDB5B29CA07420055A719 /* Assets.xcassets */; };
 		BA2EDB5F29CA07420055A719 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2EDB5E29CA07420055A719 /* Preview Assets.xcassets */; };
+		BA2EDB6929CA11020055A719 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB6829CA11020055A719 /* HomeView.swift */; };
+		BA2EDB6D29CA135F0055A719 /* BookCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB6C29CA135F0055A719 /* BookCellView.swift */; };
+		BA2EDB6F29CA17000055A719 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB6E29CA17000055A719 /* Book.swift */; };
+		BA2EDB7229CA17A20055A719 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB7129CA17A20055A719 /* BookData.swift */; };
+		BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		BA2EDB5929CA07400055A719 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA2EDB5B29CA07420055A719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA2EDB5E29CA07420055A719 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BA2EDB6829CA11020055A719 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BA2EDB6C29CA135F0055A719 /* BookCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellView.swift; sourceTree = "<group>"; };
+		BA2EDB6E29CA17000055A719 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		BA2EDB7129CA17A20055A719 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
+		BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresentationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,10 @@
 		BA2EDB5629CA07400055A719 /* LibertyBookOfficiel */ = {
 			isa = PBXGroup;
 			children = (
+				BA2EDB7029CA17960055A719 /* Data */,
+				BA2EDB6729CA10EF0055A719 /* Model */,
+				BA2EDB6629CA10E70055A719 /* ViewModel */,
+				BA2EDB6529CA10E10055A719 /* View */,
 				BA2EDB5729CA07400055A719 /* LibertyBookOfficielApp.swift */,
 				BA2EDB5929CA07400055A719 /* ContentView.swift */,
 				BA2EDB5B29CA07420055A719 /* Assets.xcassets */,
@@ -65,6 +79,55 @@
 				BA2EDB5E29CA07420055A719 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BA2EDB6529CA10E10055A719 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EDB6B29CA13490055A719 /* Book */,
+				BA2EDB6A29CA13400055A719 /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA2EDB6629CA10E70055A719 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA2EDB6729CA10EF0055A719 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EDB6E29CA17000055A719 /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA2EDB6A29CA13400055A719 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EDB6829CA11020055A719 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BA2EDB6B29CA13490055A719 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EDB6C29CA135F0055A719 /* BookCellView.swift */,
+				BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		BA2EDB7029CA17960055A719 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EDB7129CA17A20055A719 /* BookData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2EDB7229CA17A20055A719 /* BookData.swift in Sources */,
+				BA2EDB6929CA11020055A719 /* HomeView.swift in Sources */,
+				BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */,
 				BA2EDB5A29CA07400055A719 /* ContentView.swift in Sources */,
 				BA2EDB5829CA07400055A719 /* LibertyBookOfficielApp.swift in Sources */,
+				BA2EDB6F29CA17000055A719 /* Book.swift in Sources */,
+				BA2EDB6D29CA135F0055A719 /* BookCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +341,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,6 +350,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glymaxus.LibertyBookOfficiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,8 +373,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +382,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glymaxus.LibertyBookOfficiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

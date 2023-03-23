@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct BookCellView: View {
+    var book: Book
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack( spacing: 16) {
+            Image(book.image)
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(10)
+            
+            VStack(alignment: .leading) {
+                Text(book.name)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .lineLimit(2)
+                
+                Text(book.author)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.gray)
+                    .lineLimit(1)
+            }
+        }
     }
 }
 
 struct BookCellView_Previews: PreviewProvider {
     static var previews: some View {
-        BookCellView()
+        BookCellView(book: bookData[0])
     }
 }

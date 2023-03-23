@@ -11,7 +11,7 @@ import SwiftUI
 struct LibertyBookOfficielApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

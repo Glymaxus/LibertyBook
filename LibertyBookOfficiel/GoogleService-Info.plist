@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>298312208119-vp5972v0p5d0f7jk18aap00645q2iutm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.298312208119-vp5972v0p5d0f7jk18aap00645q2iutm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAIOcB881cZW1Xu2aYAoN3XtpnKpDpIpAI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>298312208119</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.glymaxus.LibertyBookOfficiel</string>
+	<key>PROJECT_ID</key>
+	<string>libertybookofficial-8add2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>libertybookofficial-8add2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:298312208119:ios:5f089f24f0637b28150df2</string>
+</dict>
+</plist>
