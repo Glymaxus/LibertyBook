@@ -34,3 +34,4 @@ struct UserProfileView_Previews: PreviewProvider {
             .environmentObject(AuthViewModel())
     }
 }
+
