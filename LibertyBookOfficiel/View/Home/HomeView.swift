@@ -10,10 +10,13 @@ import SwiftUI
 struct HomeView: View {
     @State private var gridLayout: [GridItem] = [GridItem(.flexible())]
     @State private var gridColumn: Double = 3.0
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var bookViewModel: BookViewModel
     
     func MakeThegridSwitch() {
         gridLayout = Array(repeating: .init(.flexible()), count: Int(gridColumn))
     }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -23,7 +26,7 @@ struct HomeView: View {
                         .fontWeight(.black)
                     
                     LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                        ForEach(bookData) { book in
+                        ForEach(bookViewModel.books) { book in
                             NavigationLink(destination: BookPresentationView(book: book)) {
                                 BookCellView(book: book)
                                     .frame(maxWidth: 150, maxHeight: 250, alignment: .center)
@@ -38,7 +41,14 @@ struct HomeView: View {
             .navigationTitle("Accueil")
             .onAppear {
                 MakeThegridSwitch()
-        }
+            }
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink(destination: UserProfileView()) {
+                        Image(systemName: "person")
+                    }
+                }
+            }
         }
     }
 }

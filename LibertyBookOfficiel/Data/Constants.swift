@@ -5,4 +5,7 @@
 //  Created by bastien giat on 23/03/2023.
 //
 
-import Foundation
+import Firebase
+
+let usersCollection = Firestore.firestore().collection("users")
+let booksCollection = Firestore.firestore().collection("books")

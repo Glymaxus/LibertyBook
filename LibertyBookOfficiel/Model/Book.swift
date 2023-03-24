@@ -5,10 +5,10 @@
 //  Created by bastien giat on 21/03/2023.
 //
 
-import Foundation
+import FirebaseFirestoreSwift
 
-struct Book: Identifiable {
-    var id = UUID()
+struct Book: Identifiable, Codable {
+    @DocumentID var id: String?
     var image: String
     var name: String
     var author: String

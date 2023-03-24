@@ -16,6 +16,23 @@
 		BA2EDB6F29CA17000055A719 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB6E29CA17000055A719 /* Book.swift */; };
 		BA2EDB7229CA17A20055A719 /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB7129CA17A20055A719 /* BookData.swift */; };
 		BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */; };
+		BA527AAC29CC98B800448065 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AAB29CC98B800448065 /* LoginView.swift */; };
+		BA527AAE29CC98D400448065 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AAD29CC98D400448065 /* RegisterView.swift */; };
+		BA527AB029CC99E400448065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA527AAF29CC99E400448065 /* GoogleService-Info.plist */; };
+		BA527AB329CC9AF000448065 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA527AB229CC9AF000448065 /* FirebaseAnalytics */; };
+		BA527AB529CC9AF000448065 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA527AB429CC9AF000448065 /* FirebaseAuth */; };
+		BA527AB729CC9AF000448065 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA527AB629CC9AF000448065 /* FirebaseDatabase */; };
+		BA527AB929CC9AF000448065 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA527AB829CC9AF000448065 /* FirebaseDatabaseSwift */; };
+		BA527ABB29CC9AF000448065 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BA527ABA29CC9AF000448065 /* FirebaseFirestore */; };
+		BA527ABD29CC9AF000448065 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA527ABC29CC9AF000448065 /* FirebaseFirestoreSwift */; };
+		BA527ABF29CC9BA300448065 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527ABE29CC9BA300448065 /* AuthViewModel.swift */; };
+		BA527AC129CC9D1B00448065 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AC029CC9D1B00448065 /* Constants.swift */; };
+		BA527AC429CCA04900448065 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AC329CCA04900448065 /* CustomTextFieldView.swift */; };
+		BA527AC629CCA08100448065 /* CustomSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AC529CCA08100448065 /* CustomSecureFieldView.swift */; };
+		BA527AC829CCA12600448065 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AC729CCA12600448065 /* ResetPasswordView.swift */; };
+		BA527ACA29CCA77B00448065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AC929CCA77B00448065 /* User.swift */; };
+		BA527ACC29CCB26C00448065 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527ACB29CCB26C00448065 /* BookViewModel.swift */; };
+		BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527ACE29CDE02600448065 /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +46,17 @@
 		BA2EDB6E29CA17000055A719 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BA2EDB7129CA17A20055A719 /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresentationView.swift; sourceTree = "<group>"; };
+		BA527AAB29CC98B800448065 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BA527AAD29CC98D400448065 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		BA527AAF29CC99E400448065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA527ABE29CC9BA300448065 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		BA527AC029CC9D1B00448065 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BA527AC329CCA04900448065 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		BA527AC529CCA08100448065 /* CustomSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureFieldView.swift; sourceTree = "<group>"; };
+		BA527AC729CCA12600448065 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		BA527AC929CCA77B00448065 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA527ACB29CCB26C00448065 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		BA527ACE29CDE02600448065 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +64,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA527AB929CC9AF000448065 /* FirebaseDatabaseSwift in Frameworks */,
+				BA527AB729CC9AF000448065 /* FirebaseDatabase in Frameworks */,
+				BA527AB329CC9AF000448065 /* FirebaseAnalytics in Frameworks */,
+				BA527ABB29CC9AF000448065 /* FirebaseFirestore in Frameworks */,
+				BA527AB529CC9AF000448065 /* FirebaseAuth in Frameworks */,
+				BA527ABD29CC9AF000448065 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +95,7 @@
 		BA2EDB5629CA07400055A719 /* LibertyBookOfficiel */ = {
 			isa = PBXGroup;
 			children = (
+				BA527AC229CCA03200448065 /* Utils */,
 				BA2EDB7029CA17960055A719 /* Data */,
 				BA2EDB6729CA10EF0055A719 /* Model */,
 				BA2EDB6629CA10E70055A719 /* ViewModel */,
@@ -68,6 +103,7 @@
 				BA2EDB5729CA07400055A719 /* LibertyBookOfficielApp.swift */,
 				BA2EDB5929CA07400055A719 /* ContentView.swift */,
 				BA2EDB5B29CA07420055A719 /* Assets.xcassets */,
+				BA527AAF29CC99E400448065 /* GoogleService-Info.plist */,
 				BA2EDB5D29CA07420055A719 /* Preview Content */,
 			);
 			path = LibertyBookOfficiel;
@@ -84,8 +120,10 @@
 		BA2EDB6529CA10E10055A719 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA527ACD29CDE01B00448065 /* User */,
 				BA2EDB6B29CA13490055A719 /* Book */,
 				BA2EDB6A29CA13400055A719 /* Home */,
+				BA527AAA29CC98AC00448065 /* Authentification */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +131,8 @@
 		BA2EDB6629CA10E70055A719 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BA527ABE29CC9BA300448065 /* AuthViewModel.swift */,
+				BA527ACB29CCB26C00448065 /* BookViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -101,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				BA2EDB6E29CA17000055A719 /* Book.swift */,
+				BA527AC929CCA77B00448065 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,8 +167,36 @@
 			isa = PBXGroup;
 			children = (
 				BA2EDB7129CA17A20055A719 /* BookData.swift */,
+				BA527AC029CC9D1B00448065 /* Constants.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BA527AAA29CC98AC00448065 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				BA527AAB29CC98B800448065 /* LoginView.swift */,
+				BA527AAD29CC98D400448065 /* RegisterView.swift */,
+				BA527AC729CCA12600448065 /* ResetPasswordView.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		BA527AC229CCA03200448065 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA527AC329CCA04900448065 /* CustomTextFieldView.swift */,
+				BA527AC529CCA08100448065 /* CustomSecureFieldView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA527ACD29CDE01B00448065 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BA527ACE29CDE02600448065 /* UserProfileView.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +215,14 @@
 			dependencies = (
 			);
 			name = LibertyBookOfficiel;
+			packageProductDependencies = (
+				BA527AB229CC9AF000448065 /* FirebaseAnalytics */,
+				BA527AB429CC9AF000448065 /* FirebaseAuth */,
+				BA527AB629CC9AF000448065 /* FirebaseDatabase */,
+				BA527AB829CC9AF000448065 /* FirebaseDatabaseSwift */,
+				BA527ABA29CC9AF000448065 /* FirebaseFirestore */,
+				BA527ABC29CC9AF000448065 /* FirebaseFirestoreSwift */,
+			);
 			productName = LibertyBookOfficiel;
 			productReference = BA2EDB5429CA07400055A719 /* LibertyBookOfficiel.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +251,9 @@
 				Base,
 			);
 			mainGroup = BA2EDB4B29CA07400055A719;
+			packageReferences = (
+				BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BA2EDB5529CA07400055A719 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA527AB029CC99E400448065 /* GoogleService-Info.plist in Resources */,
 				BA2EDB5F29CA07420055A719 /* Preview Assets.xcassets in Resources */,
 				BA2EDB5C29CA07420055A719 /* Assets.xcassets in Resources */,
 			);
@@ -200,13 +281,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA527ABF29CC9BA300448065 /* AuthViewModel.swift in Sources */,
+				BA527AC129CC9D1B00448065 /* Constants.swift in Sources */,
+				BA527AC629CCA08100448065 /* CustomSecureFieldView.swift in Sources */,
+				BA527AC829CCA12600448065 /* ResetPasswordView.swift in Sources */,
+				BA527AAE29CC98D400448065 /* RegisterView.swift in Sources */,
+				BA527ACC29CCB26C00448065 /* BookViewModel.swift in Sources */,
 				BA2EDB7229CA17A20055A719 /* BookData.swift in Sources */,
 				BA2EDB6929CA11020055A719 /* HomeView.swift in Sources */,
 				BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */,
+				BA527ACA29CCA77B00448065 /* User.swift in Sources */,
+				BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */,
 				BA2EDB5A29CA07400055A719 /* ContentView.swift in Sources */,
 				BA2EDB5829CA07400055A719 /* LibertyBookOfficielApp.swift in Sources */,
 				BA2EDB6F29CA17000055A719 /* Book.swift in Sources */,
+				BA527AAC29CC98B800448065 /* LoginView.swift in Sources */,
 				BA2EDB6D29CA135F0055A719 /* BookCellView.swift in Sources */,
+				BA527AC429CCA04900448065 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +504,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA527AB229CC9AF000448065 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BA527AB429CC9AF000448065 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BA527AB629CC9AF000448065 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		BA527AB829CC9AF000448065 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		BA527ABA29CC9AF000448065 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BA527ABC29CC9AF000448065 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA527AB129CC9AF000448065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA2EDB4C29CA07400055A719 /* Project object */;
 }
