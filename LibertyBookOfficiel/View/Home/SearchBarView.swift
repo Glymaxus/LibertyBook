@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @Binding var text: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            TextField("Chercher un livre...", text: $text)
+                .padding(8)
+                .padding(.horizontal, 24)
+                .background(Color(.white))
+                .foregroundColor(.black)
+                .cornerRadius(24)
+                .overlay(
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.black)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 8)
+                )
+        }
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView()
+        SearchBarView(text: .constant("Test"))
+            .previewLayout(.sizeThatFits)
     }
 }

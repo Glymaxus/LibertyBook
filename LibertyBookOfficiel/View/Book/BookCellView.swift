@@ -21,11 +21,12 @@ struct BookCellView: View {
                     .font(.title3)
                     .fontWeight(.semibold)
                     .lineLimit(2)
+                    .foregroundColor(.white)
                 
                 Text(book.author)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .lineLimit(1)
             }
         }

@@ -10,19 +10,57 @@ import SwiftUI
 struct UserProfileView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     var body: some View {
-        VStack(alignment: .leading) {
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
             
-            Section {
-                    Text(authViewModel.currentUser?.username ?? "")
+            VStack {
+                
+                List {
+                    Section(header: Text("Mon compte").foregroundColor(.white)) {
+                        UserPageLineView(lineTitle: "Pseudo", imageName: "person", userInfo: authViewModel.currentUser?.username ?? "")
+                        
+                        UserPageLineView(lineTitle: "Adresse mail", imageName: "envelope", userInfo: authViewModel.currentUser?.email ?? "")
+                        
+                        NavigationLink(destination: AddBookView()) {
+                            UserPageLineView(lineTitle: "Gérer mon abonnement", imageName: "creditcard")
+                        }
+                        
+                        if authViewModel.currentUser?.accountType == .admin {
+                            NavigationLink(destination: AddBookView()) {
+                                UserPageLineView(lineTitle: "Ajouter un livre à la base de données", imageName: "book")
+                            }
+                        }
+                    }
+                    .headerProminence(.increased)
                     
-                    Text(authViewModel.currentUser?.email ?? "")
-            }
-            
-            Button {
-                authViewModel.signOut()
-            } label: {
-                Text("Se déconnecter")
-                    .foregroundColor(.red)
+                    
+                    
+                    Section(header: Text("A propos").foregroundColor(.white))  {
+                        NavigationLink(destination: AddBookView()) {
+                            UserPageLineView(lineTitle: "Nous contacter", imageName: "message")
+                        }
+                        
+                        NavigationLink(destination: AddBookView()) {
+                            UserPageLineView(lineTitle: "Conditions Générales", imageName: "scroll")
+                        }
+                        
+                        NavigationLink(destination: AddBookView()) {
+                            UserPageLineView(lineTitle: "Politique de confidentialité", imageName: "scroll")
+                        }
+                    }
+                    .headerProminence(.increased)
+                }
+                .scrollContentBackground(.hidden)
+                .listRowBackground(Color.white)
+                
+                Button {
+                    authViewModel.signOut()
+                } label: {
+                    Text("Se déconnecter")
+                        .foregroundColor(.red)
+                        .fontWeight(.semibold)
+                }
             }
         }
     }

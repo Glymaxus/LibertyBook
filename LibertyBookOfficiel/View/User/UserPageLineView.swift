@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct UserPageLineView: View {
+    @State var lineTitle: String
+    @State var imageName: String
+    @State var userInfo: String?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: imageName)
+            Text(lineTitle)
+            
+            Spacer()
+            
+            if userInfo != "" {
+                Text(userInfo ?? "")
+                    .foregroundColor(.gray)
+            }
+            
+        }
     }
 }
 
 struct UserPageLineView_Previews: PreviewProvider {
     static var previews: some View {
-        UserPageLineView()
+        UserPageLineView(lineTitle: "Pseudo", imageName: "person", userInfo: "Laura")
     }
 }

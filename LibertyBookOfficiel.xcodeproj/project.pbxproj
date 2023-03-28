@@ -33,6 +33,9 @@
 		BA527ACA29CCA77B00448065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AC929CCA77B00448065 /* User.swift */; };
 		BA527ACC29CCB26C00448065 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527ACB29CCB26C00448065 /* BookViewModel.swift */; };
 		BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527ACE29CDE02600448065 /* UserProfileView.swift */; };
+		BA527AD129CE07DA00448065 /* UserPageLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AD029CE07DA00448065 /* UserPageLineView.swift */; };
+		BA527AD329CE0C1E00448065 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AD229CE0C1E00448065 /* SearchBarView.swift */; };
+		BA7CF5CF29D1FC86002A0FDF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		BA527AC929CCA77B00448065 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA527ACB29CCB26C00448065 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		BA527ACE29CDE02600448065 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		BA527AD029CE07DA00448065 /* UserPageLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageLineView.swift; sourceTree = "<group>"; };
+		BA527AD229CE0C1E00448065 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				BA2EDB6829CA11020055A719 /* HomeView.swift */,
+				BA527AD229CE0C1E00448065 /* SearchBarView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -195,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				BA527ACE29CDE02600448065 /* UserProfileView.swift */,
+				BA527AD029CE07DA00448065 /* UserPageLineView.swift */,
+				BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -291,13 +300,16 @@
 				BA2EDB6929CA11020055A719 /* HomeView.swift in Sources */,
 				BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */,
 				BA527ACA29CCA77B00448065 /* User.swift in Sources */,
+				BA527AD129CE07DA00448065 /* UserPageLineView.swift in Sources */,
 				BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */,
+				BA527AD329CE0C1E00448065 /* SearchBarView.swift in Sources */,
 				BA2EDB5A29CA07400055A719 /* ContentView.swift in Sources */,
 				BA2EDB5829CA07400055A719 /* LibertyBookOfficielApp.swift in Sources */,
 				BA2EDB6F29CA17000055A719 /* Book.swift in Sources */,
 				BA527AAC29CC98B800448065 /* LoginView.swift in Sources */,
 				BA2EDB6D29CA135F0055A719 /* BookCellView.swift in Sources */,
 				BA527AC429CCA04900448065 /* CustomTextFieldView.swift in Sources */,
+				BA7CF5CF29D1FC86002A0FDF /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

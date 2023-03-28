@@ -20,4 +20,10 @@ class BookViewModel: ObservableObject {
             self.books = documents.compactMap({ try? $0.data(as: Book.self) })
         }
     }
+    
+    func filteredBooks(_ query: String) -> [Book] {
+        let lowercasedQuery = query.lowercased()
+        return books.filter({ $0.name.lowercased().contains(lowercasedQuery) || $0.author.lowercased().contains(lowercasedQuery)})
+    }
+
 }

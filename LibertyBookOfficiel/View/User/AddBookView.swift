@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct AddBookView: View {
+    @State var bookName = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            
+            VStack {
+                TextField("Nom du livre", text: $bookName)
+            }
+        }
     }
 }
 

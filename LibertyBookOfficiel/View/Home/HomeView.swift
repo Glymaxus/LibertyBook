@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var gridLayout: [GridItem] = [GridItem(.flexible())]
     @State private var gridColumn: Double = 3.0
+    @State private var searchText = ""
     @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var bookViewModel: BookViewModel
     
@@ -19,33 +20,42 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Text("Tous les livres")
-                        .font(.title)
-                        .fontWeight(.black)
-                    
-                    LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                        ForEach(bookViewModel.books) { book in
-                            NavigationLink(destination: BookPresentationView(book: book)) {
-                                BookCellView(book: book)
-                                    .frame(maxWidth: 150, maxHeight: 250, alignment: .center)
+            ZStack {
+                
+                LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text("Tous les livres")
+                            .font(.title)
+                            .fontWeight(.black)
+                            .foregroundColor(.white)
+                        
+                        SearchBarView(text: $searchText)
+                        
+                        LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
+                            ForEach(searchText.isEmpty ?  bookViewModel.books : bookViewModel.filteredBooks(searchText)) { book in
+                                NavigationLink(destination: BookPresentationView(book: book)) {
+                                    BookCellView(book: book)
+                                        .frame(maxWidth: 150, maxHeight: 250, alignment: .center)
+                                }
                             }
                         }
+                        .buttonStyle(PlainButtonStyle())
+                        
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    
+                    .padding()
                 }
-                .padding()
-            }
-            .navigationTitle("Accueil")
-            .onAppear {
-                MakeThegridSwitch()
-            }
-            .toolbar {
-                ToolbarItem {
-                    NavigationLink(destination: UserProfileView()) {
-                        Image(systemName: "person")
+                .onAppear {
+                    MakeThegridSwitch()
+                }
+                .toolbar {
+                    ToolbarItem {
+                        NavigationLink(destination: UserProfileView()) {
+                            Image(systemName: "gearshape")
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }

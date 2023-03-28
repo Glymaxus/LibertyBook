@@ -10,60 +10,65 @@ import SwiftUI
 struct BookPresentationView: View {
     var book: Book
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center) {
-                Image(book.image)
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(12)
-                    .frame(width: 250, height: 400)
-                
-                Text(book.name)
-                    .font(.title)
-                    .fontWeight(.black)
-                
-                Text(book.author)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.gray)
-                
-                HStack {
-                    Button {
-                        
-                    } label: {
-                        Text("Lire le résumé")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(
-                                Capsule()
-                                    .fill(Color("ColorBlueDark"))
-                            )
-                    }
-                    .padding(.horizontal, 8)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .center) {
+                    Image(book.image)
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(12)
+                        .frame(width: 250, height: 400)
                     
-                    Button {
+                    Text(book.name)
+                        .font(.title)
+                        .fontWeight(.black)
+                    
+                    Text(book.author)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.gray)
+                    
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Lire le résumé")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(
+                                    Capsule()
+                                        .fill(Color("ColorBlueDark"))
+                                )
+                        }
+                        .padding(.horizontal, 8)
                         
-                    } label: {
-                        Text("Ecouter l'audio")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(
-                                Capsule()
-                                    .fill(Color("ColorBlueDark"))
-                            )
+                        Button {
+                            
+                        } label: {
+                            Text("Ecouter l'audio")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(
+                                    Capsule()
+                                        .fill(Color("ColorBlueDark"))
+                                )
+                        }
+                        .padding(.horizontal, 8)
+
+
                     }
-                    .padding(.horizontal, 8)
-
-
                 }
+                .navigationTitle(book.name)
+                .navigationBarTitleDisplayMode(.inline)
+            .padding()
             }
-            .navigationTitle(book.name)
-            .navigationBarTitleDisplayMode(.inline)
-        .padding()
         }
     }
 }
