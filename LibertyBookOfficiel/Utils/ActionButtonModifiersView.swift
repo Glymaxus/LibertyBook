@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ActionButtonModifiersView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct ActionButtonModifiersView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActionButtonModifiersView()
+struct ActionButtonModifiersView: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: UIScreen.main.bounds.width - 50, height: 50)
+            .background(Color("ColorBlueLight"))
+            .clipShape(Capsule())
+            .padding()
     }
 }

@@ -59,12 +59,7 @@ struct RegistrationView: View {
                     viewModel.register(withEmail: email, password: password, username: username)
                 }, label: {
                     Text("Créer un compte")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 360, height: 50)
-                        .background(Color("ColorBlueLight"))
-                        .clipShape(Capsule())
-                        .padding()
+                        .modifier(ActionButtonModifiersView())
                 })
                 
                 Spacer()

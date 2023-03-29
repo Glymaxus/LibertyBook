@@ -64,12 +64,7 @@ struct LoginView: View {
                         viewModel.login(withEmail: email, password: password)
                     }, label: {
                         Text("Se connecter")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(width: 360, height: 50)
-                            .background(Color("ColorBlueLight"))
-                            .clipShape(Capsule())
-                            .padding()
+                            .modifier(ActionButtonModifiersView())
                     })
                     
                     Spacer()

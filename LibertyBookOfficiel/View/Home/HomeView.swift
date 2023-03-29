@@ -60,6 +60,9 @@ struct HomeView: View {
                 }
             }
         }
+        .onAppear {
+            bookViewModel.fetchBooks()
+        }
     }
 }
 

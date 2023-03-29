@@ -19,7 +19,7 @@ struct ResetPasswordView: View {
     }
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [Color("ColorBlueWriting"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack {
                 Image("instagram_logo_white")
@@ -40,12 +40,7 @@ struct ResetPasswordView: View {
                     viewModel.resetPassword(withEmail: email)
                 }, label: {
                     Text("Send reset password link")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 360, height: 50)
-                        .background(Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)))
-                        .clipShape(Capsule())
-                        .padding()
+                        .modifier(ActionButtonModifiersView())
                 })
                 
                 Spacer()

@@ -9,13 +9,49 @@ import SwiftUI
 
 struct AddBookView: View {
     @State var bookName = ""
+    @State var author = ""
+    @State var image = ""
+    @State var missingAText = false
+    
+    @EnvironmentObject var bookViewModel: BookViewModel
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            VStack {
-                TextField("Nom du livre", text: $bookName)
+            VStack(alignment: .center, spacing: 16) {
+                Text("Entrer les informations du livre pour le transférer dans la base de données")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                
+                HStack {
+                    TextField("Nom", text: $bookName)
+                    
+                    TextField("Auteur", text: $author)
+                }
+                
+                TextField("Image", text: $image)
+                
+                Button {
+                    if bookName != "" && author != "" && image != "" {
+                        bookViewModel.createBook(name: bookName, author: author, image: image)
+                        bookName = ""
+                        author = ""
+                        image = ""
+                    } else {
+                        missingAText = true
+                    }
+                } label: {
+                    Text("Valider le livre")
+                        .modifier(ActionButtonModifiersView())
+                }
+            }
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding(.horizontal)
+            .alert("Veuillez rentrer tous les champs du livre", isPresented: $missingAText) {
+                Button("Ok", role: .cancel) {
+                    missingAText = false
+                }
             }
         }
     }

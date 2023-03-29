@@ -36,6 +36,7 @@
 		BA527AD129CE07DA00448065 /* UserPageLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AD029CE07DA00448065 /* UserPageLineView.swift */; };
 		BA527AD329CE0C1E00448065 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AD229CE0C1E00448065 /* SearchBarView.swift */; };
 		BA7CF5CF29D1FC86002A0FDF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */; };
+		BA7CF5D129D338DF002A0FDF /* ActionButtonModifiersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		BA527AD029CE07DA00448065 /* UserPageLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageLineView.swift; sourceTree = "<group>"; };
 		BA527AD229CE0C1E00448065 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonModifiersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				BA527AC329CCA04900448065 /* CustomTextFieldView.swift */,
 				BA527AC529CCA08100448065 /* CustomSecureFieldView.swift */,
+				BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				BA527AD129CE07DA00448065 /* UserPageLineView.swift in Sources */,
 				BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */,
 				BA527AD329CE0C1E00448065 /* SearchBarView.swift in Sources */,
+				BA7CF5D129D338DF002A0FDF /* ActionButtonModifiersView.swift in Sources */,
 				BA2EDB5A29CA07400055A719 /* ContentView.swift in Sources */,
 				BA2EDB5829CA07400055A719 /* LibertyBookOfficielApp.swift in Sources */,
 				BA2EDB6F29CA17000055A719 /* Book.swift in Sources */,
