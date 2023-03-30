@@ -12,5 +12,7 @@ struct Book: Identifiable, Codable {
     var image: String
     var name: String
     var author: String
+    var description: String
+    var chapters: [String]
 //    var summary: [String]
 }

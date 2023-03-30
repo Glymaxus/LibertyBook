@@ -15,59 +15,63 @@ struct BookPresentationView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                VStack(alignment: .center) {
+                HStack {
                     Image(book.image)
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(12)
-                        .frame(width: 250, height: 400)
+                        .frame(width: 150, height: 200)
                     
-                    Text(book.name)
-                        .font(.title)
-                        .fontWeight(.black)
-                    
-                    Text(book.author)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.gray)
-                    
-                    HStack {
-                        Button {
-                            
-                        } label: {
+                    VStack(alignment: .leading) {
+                        Text(book.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        
+                        Text(book.author)
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        
+                        NavigationLink(destination: ReadingBookView(book: book)) {
                             Text("Lire le résumé")
                                 .font(.headline)
-                                .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding()
-                                .background(
-                                    Capsule()
-                                        .fill(Color("ColorBlueDark"))
-                                )
+                                .frame(width: UIScreen.main.bounds.width/2, height: 30)
+                                .background(Color("ColorBlueDark"))
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
-                        .padding(.horizontal, 8)
                         
                         Button {
                             
                         } label: {
-                            Text("Ecouter l'audio")
+                            Text("Ecouter le résumé")
                                 .font(.headline)
-                                .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .padding()
-                                .background(
-                                    Capsule()
-                                        .fill(Color("ColorBlueDark"))
-                                )
+                                .frame(width: UIScreen.main.bounds.width/2, height: 30)
+                                .background(Color("ColorBlueDark"))
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
-                        .padding(.horizontal, 8)
-
 
                     }
                 }
-                .navigationTitle(book.name)
-                .navigationBarTitleDisplayMode(.inline)
-            .padding()
+                
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Ce que vous allez trouver dans ce LibertyBook :")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    
+                    Text(book.description.replacingOccurrences(of: "\\n", with: "\n"))
+                        .font(.headline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color("ColorBlueDark"))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        
+                }
+                .padding()
             }
         }
     }

@@ -26,8 +26,8 @@ class BookViewModel: ObservableObject {
         return books.filter({ $0.name.lowercased().contains(lowercasedQuery) || $0.author.lowercased().contains(lowercasedQuery)})
     }
     
-    func createBook(name: String, author: String, image: String) {
-        let book = Book(image: image, name: name, author: author)
+    func createBook(name: String, author: String, image: String, description: String, chapters: [String]) {
+        let book = Book(image: image, name: name, author: author, description: description, chapters: chapters)
         
         guard let encodedBook = try? Firestore.Encoder().encode(book) else { return }
         booksCollection.document().setData(encodedBook) { _ in

@@ -37,6 +37,7 @@
 		BA527AD329CE0C1E00448065 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA527AD229CE0C1E00448065 /* SearchBarView.swift */; };
 		BA7CF5CF29D1FC86002A0FDF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */; };
 		BA7CF5D129D338DF002A0FDF /* ActionButtonModifiersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */; };
+		BA7CF5D329D49A85002A0FDF /* ReadingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5D229D49A85002A0FDF /* ReadingBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		BA527AD229CE0C1E00448065 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonModifiersView.swift; sourceTree = "<group>"; };
+		BA7CF5D229D49A85002A0FDF /* ReadingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				BA2EDB6C29CA135F0055A719 /* BookCellView.swift */,
 				BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */,
+				BA7CF5D229D49A85002A0FDF /* ReadingBookView.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				BA527AC129CC9D1B00448065 /* Constants.swift in Sources */,
 				BA527AC629CCA08100448065 /* CustomSecureFieldView.swift in Sources */,
 				BA527AC829CCA12600448065 /* ResetPasswordView.swift in Sources */,
+				BA7CF5D329D49A85002A0FDF /* ReadingBookView.swift in Sources */,
 				BA527AAE29CC98D400448065 /* RegisterView.swift in Sources */,
 				BA527ACC29CCB26C00448065 /* BookViewModel.swift in Sources */,
 				BA2EDB7229CA17A20055A719 /* BookData.swift in Sources */,

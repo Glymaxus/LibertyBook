@@ -11,6 +11,7 @@ struct AddBookView: View {
     @State var bookName = ""
     @State var author = ""
     @State var image = ""
+    @State var description = ""
     @State var missingAText = false
     
     @EnvironmentObject var bookViewModel: BookViewModel
@@ -32,9 +33,11 @@ struct AddBookView: View {
                 
                 TextField("Image", text: $image)
                 
+                TextField("Description", text: $description)
+                
                 Button {
-                    if bookName != "" && author != "" && image != "" {
-                        bookViewModel.createBook(name: bookName, author: author, image: image)
+                    if bookName != "" && author != "" && image != ""  && description != "" {
+                        bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: [description])
                         bookName = ""
                         author = ""
                         image = ""
