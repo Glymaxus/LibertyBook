@@ -14,5 +14,6 @@ struct Book: Identifiable, Codable {
     var author: String
     var description: String
     var chapters: [String]
+    var audio: String
 //    var summary: [String]
 }

@@ -9,13 +9,14 @@ import SwiftUI
 
 struct SearchBarView: View {
     @Binding var text: String
+
     var body: some View {
         HStack {
             TextField("Chercher un livre...", text: $text)
                 .padding(8)
                 .padding(.horizontal, 24)
-                .background(Color(.white))
                 .foregroundColor(.black)
+                .background(Color(.white))
                 .cornerRadius(24)
                 .overlay(
                         Image(systemName: "magnifyingglass")

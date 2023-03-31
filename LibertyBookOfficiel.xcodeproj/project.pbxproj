@@ -38,6 +38,14 @@
 		BA7CF5CF29D1FC86002A0FDF /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */; };
 		BA7CF5D129D338DF002A0FDF /* ActionButtonModifiersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */; };
 		BA7CF5D329D49A85002A0FDF /* ReadingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7CF5D229D49A85002A0FDF /* ReadingBookView.swift */; };
+		BA7CF5E329D5E478002A0FDF /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5DD29D5E478002A0FDF /* Oswald-Light.ttf */; };
+		BA7CF5E429D5E478002A0FDF /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5DE29D5E478002A0FDF /* Oswald-SemiBold.ttf */; };
+		BA7CF5E529D5E478002A0FDF /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5DF29D5E478002A0FDF /* Oswald-Bold.ttf */; };
+		BA7CF5E629D5E478002A0FDF /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5E029D5E478002A0FDF /* Oswald-ExtraLight.ttf */; };
+		BA7CF5E729D5E478002A0FDF /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5E129D5E478002A0FDF /* Oswald-Medium.ttf */; };
+		BA7CF5E829D5E478002A0FDF /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5E229D5E478002A0FDF /* Oswald-Regular.ttf */; };
+		BA8EB89529D6C71100E2F17A /* AudioBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89429D6C71100E2F17A /* AudioBookView.swift */; };
+		BA8EB89829D6C79300E2F17A /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA8EB89729D6C79300E2F17A /* sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +75,15 @@
 		BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonModifiersView.swift; sourceTree = "<group>"; };
 		BA7CF5D229D49A85002A0FDF /* ReadingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingBookView.swift; sourceTree = "<group>"; };
+		BA7CF5D629D5D3AC002A0FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BA7CF5DD29D5E478002A0FDF /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		BA7CF5DE29D5E478002A0FDF /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		BA7CF5DF29D5E478002A0FDF /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		BA7CF5E029D5E478002A0FDF /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		BA7CF5E129D5E478002A0FDF /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		BA7CF5E229D5E478002A0FDF /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		BA8EB89429D6C71100E2F17A /* AudioBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookView.swift; sourceTree = "<group>"; };
+		BA8EB89729D6C79300E2F17A /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +122,9 @@
 		BA2EDB5629CA07400055A719 /* LibertyBookOfficiel */ = {
 			isa = PBXGroup;
 			children = (
+				BA8EB89629D6C78000E2F17A /* Sounds */,
+				BA7CF5D629D5D3AC002A0FDF /* Info.plist */,
+				BA7CF5D429D5D327002A0FDF /* Fonts */,
 				BA527AC229CCA03200448065 /* Utils */,
 				BA2EDB7029CA17960055A719 /* Data */,
 				BA2EDB6729CA10EF0055A719 /* Model */,
@@ -171,6 +191,7 @@
 				BA2EDB6C29CA135F0055A719 /* BookCellView.swift */,
 				BA2EDB7329CA1ABE0055A719 /* BookPresentationView.swift */,
 				BA7CF5D229D49A85002A0FDF /* ReadingBookView.swift */,
+				BA8EB89429D6C71100E2F17A /* AudioBookView.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -212,6 +233,27 @@
 				BA7CF5CE29D1FC86002A0FDF /* AddBookView.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		BA7CF5D429D5D327002A0FDF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BA7CF5DF29D5E478002A0FDF /* Oswald-Bold.ttf */,
+				BA7CF5E029D5E478002A0FDF /* Oswald-ExtraLight.ttf */,
+				BA7CF5DD29D5E478002A0FDF /* Oswald-Light.ttf */,
+				BA7CF5E129D5E478002A0FDF /* Oswald-Medium.ttf */,
+				BA7CF5E229D5E478002A0FDF /* Oswald-Regular.ttf */,
+				BA7CF5DE29D5E478002A0FDF /* Oswald-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BA8EB89629D6C78000E2F17A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BA8EB89729D6C79300E2F17A /* sound.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA527AB029CC99E400448065 /* GoogleService-Info.plist in Resources */,
+				BA7CF5E829D5E478002A0FDF /* Oswald-Regular.ttf in Resources */,
+				BA7CF5E429D5E478002A0FDF /* Oswald-SemiBold.ttf in Resources */,
 				BA2EDB5F29CA07420055A719 /* Preview Assets.xcassets in Resources */,
+				BA8EB89829D6C79300E2F17A /* sound.mp3 in Resources */,
+				BA7CF5E629D5E478002A0FDF /* Oswald-ExtraLight.ttf in Resources */,
 				BA2EDB5C29CA07420055A719 /* Assets.xcassets in Resources */,
+				BA7CF5E729D5E478002A0FDF /* Oswald-Medium.ttf in Resources */,
+				BA7CF5E329D5E478002A0FDF /* Oswald-Light.ttf in Resources */,
+				BA7CF5E529D5E478002A0FDF /* Oswald-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +352,7 @@
 				BA7CF5D329D49A85002A0FDF /* ReadingBookView.swift in Sources */,
 				BA527AAE29CC98D400448065 /* RegisterView.swift in Sources */,
 				BA527ACC29CCB26C00448065 /* BookViewModel.swift in Sources */,
+				BA8EB89529D6C71100E2F17A /* AudioBookView.swift in Sources */,
 				BA2EDB7229CA17A20055A719 /* BookData.swift in Sources */,
 				BA2EDB6929CA11020055A719 /* HomeView.swift in Sources */,
 				BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */,
@@ -449,6 +499,7 @@
 				DEVELOPMENT_TEAM = 827NDX56M9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LibertyBookOfficiel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +532,7 @@
 				DEVELOPMENT_TEAM = 827NDX56M9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LibertyBookOfficiel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

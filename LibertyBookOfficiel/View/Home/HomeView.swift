@@ -28,11 +28,11 @@ struct HomeView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         Text("Tous les livres")
-                            .font(.title)
-                            .fontWeight(.black)
+                            .font(.custom("Oswald-Bold", size: 36))
                             .foregroundColor(.white)
                         
                         SearchBarView(text: $searchText)
+                            .padding(.bottom)
                         
                         LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
                             ForEach(searchText.isEmpty ?  bookViewModel.books : bookViewModel.filteredBooks(searchText)) { book in

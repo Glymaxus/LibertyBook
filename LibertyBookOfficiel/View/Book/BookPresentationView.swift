@@ -24,55 +24,57 @@ struct BookPresentationView: View {
                     
                     VStack(alignment: .leading) {
                         Text(book.name)
-                            .font(.title)
-                            .fontWeight(.bold)
+                            .font(.custom("Oswald-Medium", size: 28))
                             .foregroundColor(.white)
                         
                         Text(book.author)
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                            .font(.custom("Oswald-Light", size: 24))
                             .foregroundColor(.white)
                         
                         NavigationLink(destination: ReadingBookView(book: book)) {
-                            Text("Lire le résumé")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(width: UIScreen.main.bounds.width/2, height: 30)
-                                .background(Color("ColorBlueDark"))
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                            HStack {
+                                Text("Lire le résumé")
+                                
+                                Image(systemName: "arrow.right")
+                            }
+                            .font(.custom("Oswald-Medium", size: 18))
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.main.bounds.width/2, height: 30)
+                            .background(Color("ColorBlueDark"))
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
                         
-                        Button {
-                            
-                        } label: {
-                            Text("Ecouter le résumé")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(width: UIScreen.main.bounds.width/2, height: 30)
-                                .background(Color("ColorBlueDark"))
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        NavigationLink(destination: AudioBookView(book: book)) {
+                            HStack {
+                                Text("Ecouter le résumé")
+                                
+                                Image(systemName: "arrow.right")
+                            }
+                            .font(.custom("Oswald-Medium", size: 18))
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.main.bounds.width/2, height: 30)
+                            .background(Color("ColorBlueDark"))
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
-
+                        
                     }
                 }
                 
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Ce que vous allez trouver dans ce LibertyBook :")
-                        .font(.title2)
-                        .fontWeight(.semibold)
+                        .font(.custom("Oswald-Medium", size: 20))
                         .foregroundColor(.white)
                     
                     Text(book.description.replacingOccurrences(of: "\\n", with: "\n"))
-                        .font(.headline)
-                        .fontWeight(.medium)
+                        .font(.custom("Oswald-Regular", size: 20))
                         .foregroundColor(.white)
                         .padding()
                         .background(Color("ColorBlueDark"))
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                        
+                    
                 }
-                .padding()
             }
+            .padding(8)
         }
     }
 }

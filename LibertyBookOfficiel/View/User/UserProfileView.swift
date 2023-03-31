@@ -17,7 +17,7 @@ struct UserProfileView: View {
             VStack {
                 
                 List {
-                    Section(header: Text("Mon compte").foregroundColor(.white)) {
+                    Section(header: Text("Mon compte").font(.custom("Oswald-SemiBold", size: 26)).foregroundColor(.white)) {
                         UserPageLineView(lineTitle: "Pseudo", imageName: "person", userInfo: authViewModel.currentUser?.username ?? "")
                         
                         UserPageLineView(lineTitle: "Adresse mail", imageName: "envelope", userInfo: authViewModel.currentUser?.email ?? "")
@@ -36,7 +36,7 @@ struct UserProfileView: View {
                     
                     
                     
-                    Section(header: Text("A propos").foregroundColor(.white))  {
+                    Section(header: Text("A propos").font(.custom("Oswald-SemiBold", size: 26)).foregroundColor(.white))  {
                         NavigationLink(destination: AddBookView()) {
                             UserPageLineView(lineTitle: "Nous contacter", imageName: "message")
                         }
@@ -58,6 +58,7 @@ struct UserProfileView: View {
                     authViewModel.signOut()
                 } label: {
                     Text("Se déconnecter")
+                        .font(.custom("Oswald-SemiBold", size: 18))
                         .foregroundColor(.red)
                         .fontWeight(.semibold)
                 }

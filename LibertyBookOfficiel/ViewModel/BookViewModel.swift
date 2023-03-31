@@ -27,7 +27,7 @@ class BookViewModel: ObservableObject {
     }
     
     func createBook(name: String, author: String, image: String, description: String, chapters: [String]) {
-        let book = Book(image: image, name: name, author: author, description: description, chapters: chapters)
+        let book = Book(image: image, name: name, author: author, description: description, chapters: chapters, audio: "sound")
         
         guard let encodedBook = try? Firestore.Encoder().encode(book) else { return }
         booksCollection.document().setData(encodedBook) { _ in

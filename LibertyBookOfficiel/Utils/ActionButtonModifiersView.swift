@@ -10,7 +10,7 @@ import SwiftUI
 struct ActionButtonModifiersView: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.headline)
+            .font(.custom("Oswald-Medium", size: 22))
             .foregroundColor(.white)
             .frame(width: UIScreen.main.bounds.width - 50, height: 50)
             .background(Color("ColorBlueLight"))

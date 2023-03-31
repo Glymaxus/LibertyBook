@@ -12,6 +12,7 @@ struct AddBookView: View {
     @State var author = ""
     @State var image = ""
     @State var description = ""
+    @State var chapters: [String] = [""]
     @State var missingAText = false
     
     @EnvironmentObject var bookViewModel: BookViewModel
@@ -22,8 +23,8 @@ struct AddBookView: View {
             
             VStack(alignment: .center, spacing: 16) {
                 Text("Entrer les informations du livre pour le transférer dans la base de données")
-                    .font(.title)
-                    .fontWeight(.semibold)
+                    .font(.custom("Oswald-Bold", size: 22))
+                    .foregroundColor(.white)
                 
                 HStack {
                     TextField("Nom", text: $bookName)
@@ -35,12 +36,28 @@ struct AddBookView: View {
                 
                 TextField("Description", text: $description)
                 
+                VStack {
+                    ForEach(chapters.indices, id: \.self) { index in
+                        TextField("Chapitre \(index + 1)", text: $chapters[index])
+                    }
+                    Button {
+                        chapters.append("")
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                    }
+                    .padding(.top)
+
+                }
+                
                 Button {
                     if bookName != "" && author != "" && image != ""  && description != "" {
-                        bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: [description])
+                        bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: chapters)
                         bookName = ""
                         author = ""
                         image = ""
+                        description = ""
+                        chapters = [""]
                     } else {
                         missingAText = true
                     }

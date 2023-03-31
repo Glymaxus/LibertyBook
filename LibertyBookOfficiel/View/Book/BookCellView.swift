@@ -18,14 +18,12 @@ struct BookCellView: View {
             
             VStack(alignment: .leading) {
                 Text(book.name)
-                    .font(.title3)
-                    .fontWeight(.semibold)
+                    .font(.custom("Oswald-SemiBold", size: 18))
                     .lineLimit(2)
                     .foregroundColor(.white)
                 
                 Text(book.author)
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
+                    .font(.custom("Oswald-Regular", size: 18))
                     .foregroundColor(.white)
                     .lineLimit(1)
             }

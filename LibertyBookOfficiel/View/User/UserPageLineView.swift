@@ -15,11 +15,13 @@ struct UserPageLineView: View {
         HStack {
             Image(systemName: imageName)
             Text(lineTitle)
+                .font(.custom("Oswald-Light", size: 18))
             
             Spacer()
             
             if userInfo != "" {
                 Text(userInfo ?? "")
+                    .font(.custom("Oswald-Light", size: 18))
                     .foregroundColor(.gray)
             }
             
