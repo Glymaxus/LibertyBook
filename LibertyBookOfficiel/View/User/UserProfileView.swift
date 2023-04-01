@@ -37,15 +37,15 @@ struct UserProfileView: View {
                     
                     
                     Section(header: Text("A propos").font(.custom("Oswald-SemiBold", size: 26)).foregroundColor(.white))  {
-                        NavigationLink(destination: AddBookView()) {
+                        NavigationLink(destination: ContactUsView()) {
                             UserPageLineView(lineTitle: "Nous contacter", imageName: "message")
                         }
                         
-                        NavigationLink(destination: AddBookView()) {
+                        NavigationLink(destination: ConditionsGeneralesView()) {
                             UserPageLineView(lineTitle: "Conditions Générales", imageName: "scroll")
                         }
                         
-                        NavigationLink(destination: AddBookView()) {
+                        NavigationLink(destination: PolitiqueConfidentialiteView()) {
                             UserPageLineView(lineTitle: "Politique de confidentialité", imageName: "scroll")
                         }
                     }
