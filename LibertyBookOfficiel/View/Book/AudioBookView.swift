@@ -7,13 +7,19 @@
 
 import SwiftUI
 import AVKit
+import MediaPlayer
 
 struct AudioBookView: View {
     let book: Book
+    let audioViewModel = AudioViewModel()
     @State var time: CGFloat = 0
     @State var player: AVAudioPlayer!
     @State var width: CGFloat = 0
     @State var playing = false
+    @State private var currentTime = "0.00"
+    @State private var duration = ""
+
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
@@ -38,7 +44,19 @@ struct AudioBookView: View {
                         .frame(width: self.width, height: 8)
                         .padding(10)
                 }
-                .padding(.bottom, 40)
+                
+                HStack {
+                    Text("\(self.currentTime)")
+                        .font(.custom("Oswald-Regular", size: 24))
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    Text(duration)
+                        .font(.custom("Oswald-Regular", size: 24))
+                        .foregroundColor(.white)
+                }
+                .padding(.horizontal)
                 
                 HStack {
                     Button(action: {
@@ -90,7 +108,30 @@ struct AudioBookView: View {
                         let value = self.player.currentTime / self.player.duration
                         self.width = screen * CGFloat(value)
                     }
+                    
+                    let currentTime = self.player.currentTime
+                    let currentTimeMinutes = Int(currentTime / 60)
+                    let currentTimeSeconds = Int(currentTime.truncatingRemainder(dividingBy: 60))
+                    let formattedCurrentTime = String(format: "%d:%02d", currentTimeMinutes, currentTimeSeconds)
+                    self.currentTime = formattedCurrentTime
                 }
+            
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                  try AVAudioSession.sharedInstance().setActive(true)
+                    
+                } catch _ {
+                    return print("Error")
+                }
+                audioViewModel.setupAVAudioSession(book: book, player: player)
+                
+                
+                let duration = self.player.duration
+                let durationMinutes = Int(duration / 60)
+                let durationSeconds = Int(duration.truncatingRemainder(dividingBy: 60))
+                let formattedDuration = String(format: "%d:%02d", durationMinutes, durationSeconds)
+                self.duration = formattedDuration
+                
             }
             .onDisappear {
                 self.player.stop()
@@ -98,6 +139,10 @@ struct AudioBookView: View {
         }
     }
 }
+
+
+
+
 
 struct AudioBookView_Previews: PreviewProvider {
     static var previews: some View {

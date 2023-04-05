@@ -44,6 +44,7 @@
 		BA7CF5E629D5E478002A0FDF /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5E029D5E478002A0FDF /* Oswald-ExtraLight.ttf */; };
 		BA7CF5E729D5E478002A0FDF /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5E129D5E478002A0FDF /* Oswald-Medium.ttf */; };
 		BA7CF5E829D5E478002A0FDF /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7CF5E229D5E478002A0FDF /* Oswald-Regular.ttf */; };
+		BA81994129DD8D3600CD2518 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81994029DD8D3600CD2518 /* AudioViewModel.swift */; };
 		BA8EB89529D6C71100E2F17A /* AudioBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89429D6C71100E2F17A /* AudioBookView.swift */; };
 		BA8EB89829D6C79300E2F17A /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA8EB89729D6C79300E2F17A /* sound.mp3 */; };
 		BA8EB89B29D6CF1900E2F17A /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89A29D6CF1900E2F17A /* ContactUsView.swift */; };
@@ -85,6 +86,7 @@
 		BA7CF5E029D5E478002A0FDF /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
 		BA7CF5E129D5E478002A0FDF /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		BA7CF5E229D5E478002A0FDF /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		BA81994029DD8D3600CD2518 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		BA8EB89429D6C71100E2F17A /* AudioBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookView.swift; sourceTree = "<group>"; };
 		BA8EB89729D6C79300E2F17A /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		BA8EB89A29D6CF1900E2F17A /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				BA527ABE29CC9BA300448065 /* AuthViewModel.swift */,
 				BA527ACB29CCB26C00448065 /* BookViewModel.swift */,
+				BA81994029DD8D3600CD2518 /* AudioViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA8EB89F29D6D1FC00E2F17A /* PolitiqueConfidentialitéView.swift in Sources */,
+				BA81994129DD8D3600CD2518 /* AudioViewModel.swift in Sources */,
 				BA527ABF29CC9BA300448065 /* AuthViewModel.swift in Sources */,
 				BA527AC129CC9D1B00448065 /* Constants.swift in Sources */,
 				BA527AC629CCA08100448065 /* CustomSecureFieldView.swift in Sources */,

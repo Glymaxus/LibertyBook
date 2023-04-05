@@ -21,6 +21,7 @@ struct BookCellView: View {
                     .font(.custom("Oswald-SemiBold", size: 18))
                     .lineLimit(2)
                     .foregroundColor(.white)
+                    .frame(minHeight: 45)
                 
                 Text(book.author)
                     .font(.custom("Oswald-Regular", size: 18))

@@ -13,6 +13,7 @@ struct AddBookView: View {
     @State var image = ""
     @State var description = ""
     @State var chapters: [String] = [""]
+    @State var buyLink = ""
     @State var missingAText = false
     
     @EnvironmentObject var bookViewModel: BookViewModel
@@ -36,6 +37,8 @@ struct AddBookView: View {
                 
                 TextField("Description", text: $description)
                 
+                TextField("Lien d'achat", text: $buyLink)
+                
                 VStack {
                     ForEach(chapters.indices, id: \.self) { index in
                         TextField("Chapitre \(index + 1)", text: $chapters[index])
@@ -52,7 +55,7 @@ struct AddBookView: View {
                 
                 Button {
                     if bookName != "" && author != "" && image != ""  && description != "" {
-                        bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: chapters)
+                        bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: chapters, buyLink: buyLink)
                         bookName = ""
                         author = ""
                         image = ""

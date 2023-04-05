@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var searchText = ""
     @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var bookViewModel: BookViewModel
+    @State private var isNavigationBarHidden = true
     
     func MakeThegridSwitch() {
         gridLayout = Array(repeating: .init(.flexible()), count: Int(gridColumn))
@@ -26,6 +27,19 @@ struct HomeView: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
+                    HStack {
+                        Spacer()
+                        
+                        NavigationLink(destination: UserProfileView()) {
+                            Image(systemName: "gearshape")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.white)
+                        }
+                        .padding(.top)
+                        .padding(.trailing)
+                    }
                     VStack(alignment: .leading) {
                         Text("Tous les livres")
                             .font(.custom("Oswald-Bold", size: 36))
@@ -47,21 +61,11 @@ struct HomeView: View {
                     }
                     .padding()
                 }
-                .onAppear {
-                    MakeThegridSwitch()
-                }
-                .toolbar {
-                    ToolbarItem {
-                        NavigationLink(destination: UserProfileView()) {
-                            Image(systemName: "gearshape")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
+                
             }
         }
         .onAppear {
-            bookViewModel.fetchBooks()
+            MakeThegridSwitch()
         }
     }
 }

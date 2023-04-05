@@ -11,5 +11,9 @@
 		<string>Oswald-Light.ttf</string>
 		<string>Oswald-SemiBold.ttf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>

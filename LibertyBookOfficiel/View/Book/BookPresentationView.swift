@@ -73,6 +73,22 @@ struct BookPresentationView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                     
                 }
+                
+                VStack {
+                    Text("Afin d'entrer plus précisement dans les détails du livre, nous vous conseillerons toujours d'acheter le livre :")
+                        .font(.custom("Oswald-Medium", size: 20))
+                        .foregroundColor(.white)
+                    
+                    HStack {
+                        Image(systemName: "cart")
+                        Link("Acheter le livre ->", destination: URL(string: "\(book.buyLink)")!)
+                            .font(.custom("Oswald-Regular", size: 18))
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color("ColorBlueLight"))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                }
             }
             .padding(8)
         }
