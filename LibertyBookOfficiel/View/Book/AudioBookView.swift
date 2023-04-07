@@ -16,9 +16,11 @@ struct AudioBookView: View {
     @State var player: AVAudioPlayer!
     @State var width: CGFloat = 0
     @State var playing = false
-    @State private var currentTime = "0.00"
+    @State private var currentTime = "0:00"
     @State private var duration = ""
-
+    @State private var speedRate: Float = 1.0
+    @State private var showSpeedRateSheet = false
+    
     
     var body: some View {
         ZStack {
@@ -58,13 +60,15 @@ struct AudioBookView: View {
                 }
                 .padding(.horizontal)
                 
-                HStack {
+                HStack(spacing: 48) {
                     Button(action: {
                         self.player.currentTime -= 15
                     }, label: {
                         Image(systemName: "gobackward.15")
-                            .font(.title)
+                            .resizable()
+                            .scaledToFit()
                             .foregroundColor(.white)
+                            .frame(width: 48, height: 48)
                     })
                     
                     Button(action: {
@@ -77,9 +81,11 @@ struct AudioBookView: View {
                             self.playing = true
                         }
                     }, label: {
-                        Image(systemName: self.playing ? "pause.circle" : "play.circle")
-                            .font(.title)
+                        Image(systemName: self.playing ? "pause" : "play")
+                            .resizable()
+                            .scaledToFit()
                             .foregroundColor(.white)
+                            .frame(width: 48, height: 48)
                     })
                     
                     Button(action: {
@@ -90,16 +96,31 @@ struct AudioBookView: View {
                         }
                     }, label: {
                         Image(systemName: "goforward.15")
-                            .font(.title)
+                            .resizable()
+                            .scaledToFit()
                             .foregroundColor(.white)
+                            .frame(width: 48, height: 48)
                     })
                     
                 }
+                
+                Button {
+                        showSpeedRateSheet = true
+                } label: {
+                    Text("Vitesse : x\(Double(speedRate).toString())")
+                        .font(.custom("Oswald-Regular", size: 24))
+                        .foregroundColor(.white)
+                }
+                .padding()
+                .buttonStyle(.bordered)
+                .tint(Color("ColorBlueLight"))
             }
             .onAppear {
+                
                 let url = Bundle.main.path(forResource: self.book.audio, ofType: "mp3")
                 
                 self.player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))
+                player.enableRate = true
                 self.player.prepareToPlay()
                 
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -115,17 +136,16 @@ struct AudioBookView: View {
                     let formattedCurrentTime = String(format: "%d:%02d", currentTimeMinutes, currentTimeSeconds)
                     self.currentTime = formattedCurrentTime
                 }
-            
+                
                 do {
                     try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-                  try AVAudioSession.sharedInstance().setActive(true)
+                    try AVAudioSession.sharedInstance().setActive(true)
                     
                 } catch _ {
                     return print("Error")
                 }
                 audioViewModel.setupAVAudioSession(book: book, player: player)
-                
-                
+
                 let duration = self.player.duration
                 let durationMinutes = Int(duration / 60)
                 let durationSeconds = Int(duration.truncatingRemainder(dividingBy: 60))
@@ -136,6 +156,9 @@ struct AudioBookView: View {
             .onDisappear {
                 self.player.stop()
             }
+        }
+        .sheet(isPresented: $showSpeedRateSheet) {
+            ChooseSpeedRateView(rateSpeed: $speedRate, player: $player)
         }
     }
 }

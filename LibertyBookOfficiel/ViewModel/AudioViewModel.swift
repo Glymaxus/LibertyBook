@@ -53,17 +53,20 @@ struct AudioViewModel {
         let artwork = MPMediaItemArtwork(boundsSize: artworkImage!.size) { size in
             return artworkImage!
         }
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: book.name, MPMediaItemPropertyArtist: book.author, MPMediaItemPropertyArtwork: artwork]
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: book.name, MPMediaItemPropertyArtist: book.author, MPMediaItemPropertyArtwork: artwork, MPNowPlayingInfoPropertyElapsedPlaybackTime: player.currentTime,
+                                                MPMediaItemPropertyPlaybackDuration: player.duration]
 
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
             player.play()
             return .success
         }
+        
         commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
             player.pause()
             return .success
         }
+        
         commandCenter.skipForwardCommand.addTarget { (envent) -> MPRemoteCommandHandlerStatus in
             let increase = player.currentTime + 10
             
@@ -72,6 +75,7 @@ struct AudioViewModel {
             }
             return .success
         }
+        
         commandCenter.skipBackwardCommand.addTarget { (envent) -> MPRemoteCommandHandlerStatus in
             let decrease = player.currentTime - 10
             
