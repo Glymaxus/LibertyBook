@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import FirebaseStorage
 
 class BookViewModel: ObservableObject {
     @Published var books = [Book]()
@@ -33,6 +34,10 @@ class BookViewModel: ObservableObject {
         booksCollection.document().setData(encodedBook) { _ in
             print("DEBUG: did upload book to firestore")
         }
+    }
+    
+    func uploadImage() {
+        
     }
 
 }

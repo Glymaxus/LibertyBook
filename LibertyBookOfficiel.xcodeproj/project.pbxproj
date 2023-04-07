@@ -41,13 +41,13 @@
 		BA81994129DD8D3600CD2518 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81994029DD8D3600CD2518 /* AudioViewModel.swift */; };
 		BA81994329DEC88A00CD2518 /* ChooseSpeedRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81994229DEC88A00CD2518 /* ChooseSpeedRateView.swift */; };
 		BA81994629DED0BA00CD2518 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81994529DED0BA00CD2518 /* Double.swift */; };
-		BA81994829DF150900CD2518 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81994729DF150900CD2518 /* ImageUploader.swift */; };
 		BA81994C29DF1AE500CD2518 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA81994B29DF1AE500CD2518 /* FirebaseAuth */; };
 		BA81994E29DF1AE500CD2518 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA81994D29DF1AE500CD2518 /* FirebaseDatabase */; };
 		BA81995029DF1AE500CD2518 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA81994F29DF1AE500CD2518 /* FirebaseDatabaseSwift */; };
 		BA81995229DF1AE500CD2518 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BA81995129DF1AE500CD2518 /* FirebaseFirestore */; };
 		BA81995429DF1AE500CD2518 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA81995329DF1AE500CD2518 /* FirebaseFirestoreSwift */; };
 		BA81995629DF1AE500CD2518 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BA81995529DF1AE500CD2518 /* FirebaseStorage */; };
+		BA81995829E0004200CD2518 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81995729E0004200CD2518 /* ImagePicker.swift */; };
 		BA8EB89529D6C71100E2F17A /* AudioBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89429D6C71100E2F17A /* AudioBookView.swift */; };
 		BA8EB89829D6C79300E2F17A /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA8EB89729D6C79300E2F17A /* sound.mp3 */; };
 		BA8EB89B29D6CF1900E2F17A /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89A29D6CF1900E2F17A /* ContactUsView.swift */; };
@@ -92,7 +92,7 @@
 		BA81994029DD8D3600CD2518 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		BA81994229DEC88A00CD2518 /* ChooseSpeedRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSpeedRateView.swift; sourceTree = "<group>"; };
 		BA81994529DED0BA00CD2518 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		BA81994729DF150900CD2518 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		BA81995729E0004200CD2518 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		BA8EB89429D6C71100E2F17A /* AudioBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookView.swift; sourceTree = "<group>"; };
 		BA8EB89729D6C79300E2F17A /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		BA8EB89A29D6CF1900E2F17A /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				BA527AC329CCA04900448065 /* CustomTextFieldView.swift */,
 				BA527AC529CCA08100448065 /* CustomSecureFieldView.swift */,
 				BA7CF5D029D338DF002A0FDF /* ActionButtonModifiersView.swift */,
-				BA81994729DF150900CD2518 /* ImageUploader.swift */,
+				BA81995729E0004200CD2518 /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -399,12 +399,12 @@
 				BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */,
 				BA527ACA29CCA77B00448065 /* User.swift in Sources */,
 				BA527AD129CE07DA00448065 /* UserPageLineView.swift in Sources */,
-				BA81994829DF150900CD2518 /* ImageUploader.swift in Sources */,
 				BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */,
 				BA527AD329CE0C1E00448065 /* SearchBarView.swift in Sources */,
 				BA7CF5D129D338DF002A0FDF /* ActionButtonModifiersView.swift in Sources */,
 				BA2EDB5A29CA07400055A719 /* ContentView.swift in Sources */,
 				BA81994329DEC88A00CD2518 /* ChooseSpeedRateView.swift in Sources */,
+				BA81995829E0004200CD2518 /* ImagePicker.swift in Sources */,
 				BA2EDB5829CA07400055A719 /* LibertyBookOfficielApp.swift in Sources */,
 				BA2EDB6F29CA17000055A719 /* Book.swift in Sources */,
 				BA527AAC29CC98B800448065 /* LoginView.swift in Sources */,

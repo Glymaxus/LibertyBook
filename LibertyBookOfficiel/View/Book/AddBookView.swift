@@ -10,11 +10,13 @@ import SwiftUI
 struct AddBookView: View {
     @State var bookName = ""
     @State var author = ""
-    @State var image = ""
     @State var description = ""
+    @State var image = ""
     @State var chapters: [String] = [""]
     @State var buyLink = ""
     @State var missingAText = false
+    @State var isPickerShowing = false
+    @State var selectedImage: UIImage?
     
     @EnvironmentObject var bookViewModel: BookViewModel
     var body: some View {
@@ -22,59 +24,77 @@ struct AddBookView: View {
             LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            VStack(alignment: .center, spacing: 16) {
-                Text("Entrer les informations du livre pour le transférer dans la base de données")
-                    .font(.custom("Oswald-Bold", size: 22))
-                    .foregroundColor(.white)
-                
-                HStack {
-                    TextField("Nom", text: $bookName)
+            ScrollView {
+                VStack(alignment: .center, spacing: 16) {
+                    Text("Entrer les informations du livre pour le transférer dans la base de données")
+                        .font(.custom("Oswald-Bold", size: 22))
+                        .foregroundColor(.white)
                     
-                    TextField("Auteur", text: $author)
-                }
-                
-                TextField("Image", text: $image)
-                
-                TextField("Description", text: $description)
-                
-                TextField("Lien d'achat", text: $buyLink)
-                
-                VStack {
-                    ForEach(chapters.indices, id: \.self) { index in
-                        TextField("Chapitre \(index + 1)", text: $chapters[index])
-                    }
                     Button {
-                        chapters.append("")
+                        isPickerShowing = true
                     } label: {
-                        Image(systemName: "plus")
-                            .foregroundColor(.white)
+                        if selectedImage != nil {
+                            Image(uiImage: selectedImage!)
+                                .resizable()
+                                .frame(width: 200, height: 200)
+                        } else {
+                            Text("Choisir une photo")
+                                .font(.custom("Oswald-Regular", size: 24))
+                                .foregroundColor(.white)
+                        }
                     }
-                    .padding(.top)
 
-                }
-                
-                Button {
-                    if bookName != "" && author != "" && image != ""  && description != "" {
-                        bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: chapters, buyLink: buyLink)
-                        bookName = ""
-                        author = ""
-                        image = ""
-                        description = ""
-                        chapters = [""]
-                    } else {
-                        missingAText = true
+                    HStack {
+                        TextField("Nom", text: $bookName)
+                        
+                        TextField("Auteur", text: $author)
                     }
-                } label: {
-                    Text("Valider le livre")
-                        .modifier(ActionButtonModifiersView())
+                    
+                    TextField("Description", text: $description)
+                    
+                    TextField("Lien d'achat", text: $buyLink)
+                    
+                    VStack {
+                        ForEach(chapters.indices, id: \.self) { index in
+                            TextField("Chapitre \(index + 1)", text: $chapters[index])
+                        }
+                        Button {
+                            chapters.append("")
+                        } label: {
+                            Image(systemName: "plus")
+                                .foregroundColor(.white)
+                        }
+                        .padding(.top)
+
+                    }
+                    
+                    Button {
+                        if bookName != "" && author != "" && selectedImage != nil  && description != "" && chapters != [""] {
+                            bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: chapters, buyLink: buyLink)
+                            bookName = ""
+                            author = ""
+                            selectedImage = nil
+                            description = ""
+                            chapters = [""]
+                        } else {
+                            missingAText = true
+                        }
+                    } label: {
+                        Text("Valider le livre")
+                            .modifier(ActionButtonModifiersView())
+                    }
                 }
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+                .sheet(isPresented: $isPickerShowing, content: {
+                    // image picker
+                    ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
+                })
+                .alert("Veuillez rentrer tous les champs du livre", isPresented: $missingAText) {
+                    Button("Ok", role: .cancel) {
+                        missingAText = false
+                    }
             }
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding(.horizontal)
-            .alert("Veuillez rentrer tous les champs du livre", isPresented: $missingAText) {
-                Button("Ok", role: .cancel) {
-                    missingAText = false
-                }
             }
         }
     }
