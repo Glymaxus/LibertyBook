@@ -49,13 +49,13 @@ struct AudioViewModel {
     }
     
     private func setupCommandCenter(book: Book, player: AVAudioPlayer!) {
-        let artworkImage = UIImage(named: book.image)
-        let artwork = MPMediaItemArtwork(boundsSize: artworkImage!.size) { size in
-            return artworkImage!
-        }
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: book.name, MPMediaItemPropertyArtist: book.author, MPMediaItemPropertyArtwork: artwork, MPNowPlayingInfoPropertyElapsedPlaybackTime: player.currentTime,
+//        let artworkImage = UIImage(named: book.image)
+//        let artwork = MPMediaItemArtwork(boundsSize: artworkImage!.size) { size in
+//            return artworkImage!
+//        }
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: book.name, MPMediaItemPropertyArtist: book.author,  MPNowPlayingInfoPropertyElapsedPlaybackTime: player.currentTime,
                                                 MPMediaItemPropertyPlaybackDuration: player.duration]
-
+   // MPMediaItemPropertyArtwork: artwork,
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
             player.play()

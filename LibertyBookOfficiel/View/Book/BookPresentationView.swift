@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct BookPresentationView: View {
     var book: Book
@@ -16,7 +17,7 @@ struct BookPresentationView: View {
             
             ScrollView {
                 HStack {
-                    Image(book.image)
+                    KFImage(URL(string: book.image))
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(12)

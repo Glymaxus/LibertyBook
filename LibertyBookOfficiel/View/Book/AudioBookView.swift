@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 import MediaPlayer
+import Kingfisher
 
 struct AudioBookView: View {
     let book: Book
@@ -28,7 +29,7 @@ struct AudioBookView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Image(book.image)
+                KFImage(URL(string: book.image))
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 300, alignment: .center)

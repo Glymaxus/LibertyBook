@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct BookCellView: View {
     var book: Book
     var body: some View {
         VStack( spacing: 16) {
-            Image(book.image)
+            KFImage(URL(string: book.image))
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(10)

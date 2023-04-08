@@ -11,7 +11,6 @@ struct AddBookView: View {
     @State var bookName = ""
     @State var author = ""
     @State var description = ""
-    @State var image = ""
     @State var chapters: [String] = [""]
     @State var buyLink = ""
     @State var missingAText = false
@@ -70,7 +69,7 @@ struct AddBookView: View {
                     
                     Button {
                         if bookName != "" && author != "" && selectedImage != nil  && description != "" && chapters != [""] {
-                            bookViewModel.createBook(name: bookName, author: author, image: image, description: description, chapters: chapters, buyLink: buyLink)
+                            bookViewModel.createBook(name: bookName, author: author, image: selectedImage!, description: description, chapters: chapters, buyLink: buyLink)
                             bookName = ""
                             author = ""
                             selectedImage = nil
