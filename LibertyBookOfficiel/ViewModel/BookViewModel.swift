@@ -27,28 +27,43 @@ class BookViewModel: ObservableObject {
         return books.filter({ $0.name.lowercased().contains(lowercasedQuery) || $0.author.lowercased().contains(lowercasedQuery)})
     }
     
-    func createBook(name: String, author: String, image: UIImage, description: String, chapters: [String], buyLink: String) {
-        
-        
-        uploadImage(selectedImage: image) { imageurl in
-            let book = Book(image: imageurl, name: name, author: author, description: description, chapters: chapters, audio: "sound", buyLink: buyLink)
+    func createBook(name: String, author: String, image: UIImage, description: String, chapters: [String], buyLink: String, sound: String) {
+        self.uploadImage(selectedImage: image) { imageurl in
+            let book = Book(image: imageurl, name: name, author: author, description: description, chapters: chapters, audio: sound, buyLink: buyLink)
             
             guard let encodedBook = try? Firestore.Encoder().encode(book) else { return }
             booksCollection.document().setData(encodedBook) { _ in
                 print("DEBUG: did upload book to firestore")
             }
+            
         }
     }
     
+    //    func getSongUrl(musicPath: String, completion: @escaping(String) -> Void) {
+    //        let storageRef = Storage.storage()
+    //        let musicRef = storageRef.reference(withPath: musicPath)
+    //        print("DEBUG: we get the path \(musicRef)")
+    //        musicRef.downloadURL { url, error in
+    //            print("DEBUG: we enter in the download")
+    //            guard let musicUrl = url?.absoluteString else {
+    //                print("DEBUG: could not get music url")
+    //                return
+    //            }
+    //            print("DEBUG: did get music URL: \(musicUrl)")
+    //            completion(musicUrl)
+    //        }
+    //
+    //    }
+    
     func uploadImage(selectedImage: UIImage?, completion: @escaping(String) -> Void) {
         guard selectedImage != nil else { return }
-        let storageRef = Storage.storage().reference()
+        let storageRef = Storage.storage()
         
         let imageData = selectedImage!.jpegData(compressionQuality: 0.8)
         
         guard imageData != nil else { return }
         
-        let fileRef = storageRef.child("/bookImages/\(NSUUID().uuidString)")
+        let fileRef = storageRef.reference().child("/bookImages/\(NSUUID().uuidString)")
         
         fileRef.putData(imageData!, metadata: nil) { metadata, error in
             if let error = error {
@@ -64,5 +79,4 @@ class BookViewModel: ObservableObject {
             }
         }
     }
-
 }

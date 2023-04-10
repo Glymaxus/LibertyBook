@@ -10,6 +10,7 @@ import Kingfisher
 
 struct BookPresentationView: View {
     var book: Book
+    @State var isLiked = false
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
@@ -24,8 +25,8 @@ struct BookPresentationView: View {
                         .frame(width: 150, height: 200)
                     
                     VStack(alignment: .leading) {
-                        Text(book.name)
-                            .font(.custom("Oswald-Medium", size: 28))
+                            Text(book.name)
+                                .font(.custom("Oswald-Medium", size: 28))
                             .foregroundColor(.white)
                         
                         Text(book.author)
@@ -92,6 +93,19 @@ struct BookPresentationView: View {
                 }
             }
             .padding(8)
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isLiked.toggle()
+                } label: {
+                    Image(systemName: isLiked ? "heart.fill" : "heart")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.red)
+                }
+            }
         }
     }
 }

@@ -27,19 +27,8 @@ struct HomeView: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    HStack {
-                        Spacer()
-                        
-                        NavigationLink(destination: UserProfileView()) {
-                            Image(systemName: "gearshape")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                        }
-                        .padding(.top)
-                        .padding(.trailing)
-                    }
+                    HeaderBarView()
+                    
                     VStack(alignment: .leading) {
                         Text("Tous les livres")
                             .font(.custom("Oswald-Bold", size: 36))
