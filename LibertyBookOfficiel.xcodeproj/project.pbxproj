@@ -52,6 +52,8 @@
 		BA81995E29E42E2400CD2518 /* FavoritesBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81995D29E42E2400CD2518 /* FavoritesBookView.swift */; };
 		BA81996029E42E3400CD2518 /* FavoritesBookCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81995F29E42E3400CD2518 /* FavoritesBookCellView.swift */; };
 		BA81996229E4303600CD2518 /* HeaderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81996129E4303600CD2518 /* HeaderBarView.swift */; };
+		BA81996429E5A30500CD2518 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81996329E5A30500CD2518 /* TabView.swift */; };
+		BA81996729E5A8EE00CD2518 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81996629E5A8EE00CD2518 /* CustomTabBar.swift */; };
 		BA8EB89529D6C71100E2F17A /* AudioBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89429D6C71100E2F17A /* AudioBookView.swift */; };
 		BA8EB89829D6C79300E2F17A /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA8EB89729D6C79300E2F17A /* sound.mp3 */; };
 		BA8EB89B29D6CF1900E2F17A /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EB89A29D6CF1900E2F17A /* ContactUsView.swift */; };
@@ -100,6 +102,8 @@
 		BA81995D29E42E2400CD2518 /* FavoritesBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBookView.swift; sourceTree = "<group>"; };
 		BA81995F29E42E3400CD2518 /* FavoritesBookCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBookCellView.swift; sourceTree = "<group>"; };
 		BA81996129E4303600CD2518 /* HeaderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarView.swift; sourceTree = "<group>"; };
+		BA81996329E5A30500CD2518 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		BA81996629E5A8EE00CD2518 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		BA8EB89429D6C71100E2F17A /* AudioBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookView.swift; sourceTree = "<group>"; };
 		BA8EB89729D6C79300E2F17A /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		BA8EB89A29D6CF1900E2F17A /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				BA2EDB6529CA10E10055A719 /* View */,
 				BA2EDB5729CA07400055A719 /* LibertyBookOfficielApp.swift */,
 				BA2EDB5929CA07400055A719 /* ContentView.swift */,
+				BA81996329E5A30500CD2518 /* TabView.swift */,
 				BA2EDB5B29CA07420055A719 /* Assets.xcassets */,
 				BA527AAF29CC99E400448065 /* GoogleService-Info.plist */,
 				BA2EDB5D29CA07420055A719 /* Preview Content */,
@@ -173,6 +178,7 @@
 		BA2EDB6529CA10E10055A719 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA81996529E5A8D800CD2518 /* CustomTabBar */,
 				BA81995C29E42E0E00CD2518 /* FavoritesBook */,
 				BA8EB89929D6CF0E00E2F17A /* Info */,
 				BA527ACD29CDE01B00448065 /* User */,
@@ -292,6 +298,14 @@
 				BA81995F29E42E3400CD2518 /* FavoritesBookCellView.swift */,
 			);
 			path = FavoritesBook;
+			sourceTree = "<group>";
+		};
+		BA81996529E5A8D800CD2518 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BA81996629E5A8EE00CD2518 /* CustomTabBar.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		BA8EB89629D6C78000E2F17A /* Sounds */ = {
@@ -419,6 +433,7 @@
 				BA2EDB6929CA11020055A719 /* HomeView.swift in Sources */,
 				BA2EDB7429CA1ABE0055A719 /* BookPresentationView.swift in Sources */,
 				BA81996029E42E3400CD2518 /* FavoritesBookCellView.swift in Sources */,
+				BA81996729E5A8EE00CD2518 /* CustomTabBar.swift in Sources */,
 				BA527ACA29CCA77B00448065 /* User.swift in Sources */,
 				BA527AD129CE07DA00448065 /* UserPageLineView.swift in Sources */,
 				BA527ACF29CDE02600448065 /* UserProfileView.swift in Sources */,
@@ -431,6 +446,7 @@
 				BA2EDB5829CA07400055A719 /* LibertyBookOfficielApp.swift in Sources */,
 				BA2EDB6F29CA17000055A719 /* Book.swift in Sources */,
 				BA527AAC29CC98B800448065 /* LoginView.swift in Sources */,
+				BA81996429E5A30500CD2518 /* TabView.swift in Sources */,
 				BA2EDB6D29CA135F0055A719 /* BookCellView.swift in Sources */,
 				BA527AC429CCA04900448065 /* CustomTextFieldView.swift in Sources */,
 				BA81994629DED0BA00CD2518 /* Double.swift in Sources */,
