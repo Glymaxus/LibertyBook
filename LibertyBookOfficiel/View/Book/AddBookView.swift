@@ -87,6 +87,7 @@ struct AddBookView: View {
                         Text("Valider le livre")
                             .modifier(ActionButtonModifiersView())
                     }
+                    .padding(.bottom, 60)
                 }
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal)

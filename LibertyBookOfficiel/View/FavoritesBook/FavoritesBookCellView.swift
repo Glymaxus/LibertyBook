@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FavoritesBookCellView: View {
-//    let book: Book
-    @State private var isLiked = false
+    let book: Book
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var bookViewModel: BookViewModel
+    @State private var isLiked = true
     var body: some View {
         HStack(spacing: 5) {
-            Image("pereRichePerePauvre")
+            KFImage(URL(string: book.image))
                 .resizable()
                 .scaledToFill()
                 .cornerRadius(12)
@@ -21,14 +24,19 @@ struct FavoritesBookCellView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Père riche père pauvre")
+                    Text(book.name)
                         .font(.custom("Oswald-SemiBold", size: 18))
                         .foregroundColor(Color("ColorBlueWriting"))
                     
                     Spacer()
                     
                     Button {
-                        isLiked.toggle()
+                        bookViewModel.removeFromFavorites(userId: authViewModel.currentUser?.id ?? "", book: self.book, completion: { success in
+                            if success {
+                                bookViewModel.fetchFavorites()
+                            }
+                        })
+                        
                     } label: {
                         Image(systemName: isLiked ? "heart.fill" : "heart")
                             .padding()
@@ -36,12 +44,12 @@ struct FavoritesBookCellView: View {
                     }
                 }
                 
-                Text("Robert Kyiosaki")
+                Text(book.author)
                     .font(.custom("Oswald-Regular", size: 18))
                     .foregroundColor(Color("ColorBlueWriting"))
                     .padding(.bottom, 5)
                 
-                Text("ceci est la descritpion du livr et c'est super parce que je peux la faire longue y'a aucun souci ça baise pas le design")
+                Text(book.description)
                     .font(.custom("Oswald-Light", size: 18))
                     .foregroundColor(Color("ColorBlueWriting"))
                     .lineLimit(3)
@@ -57,7 +65,7 @@ struct FavoritesBookCellView: View {
 
 struct FavoritesBookCellView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritesBookCellView()
+        FavoritesBookCellView(book: bookData[0])
             .previewLayout(.sizeThatFits)
     }
 }

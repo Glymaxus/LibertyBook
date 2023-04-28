@@ -12,6 +12,7 @@ struct User: Identifiable, Codable {
     var email: String
     var username: String
     var accountType: AccountType
+    var hasLiked: [String]
     
     
     var isCurrentUser: Bool { return AuthViewModel().userSession?.uid == id }

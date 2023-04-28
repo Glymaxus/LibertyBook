@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FavoritesBookView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var bookViewModel: BookViewModel
     var body: some View {
         NavigationStack {
             ZStack {
@@ -34,12 +36,17 @@ struct FavoritesBookView: View {
                             .font(.custom("Oswald-Bold", size: 32))
                             .foregroundColor(.white)
                         
-                        ForEach(0 ... 5, id: \.self) { book in
-                            FavoritesBookCellView()
+                        ForEach(bookViewModel.favoritesBooks) { book in
+                            NavigationLink(destination: BookPresentationView(book: book)) {
+                                FavoritesBookCellView(book: book)
+                            }
                         }
                     }
                 }
             }
+        }
+        .onAppear {
+            bookViewModel.fetchFavorites()
         }
     }
 }

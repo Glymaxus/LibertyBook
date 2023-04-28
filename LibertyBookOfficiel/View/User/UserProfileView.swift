@@ -62,6 +62,7 @@ struct UserProfileView: View {
                         .foregroundColor(.red)
                         .fontWeight(.semibold)
                 }
+                .padding(.bottom, 60)
             }
         }
     }

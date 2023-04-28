@@ -13,6 +13,8 @@ class AuthViewModel: ObservableObject {
     @Published var currentUser: User?
     @Published var didSendResetPasswordLink = false
     
+    static let shared = AuthViewModel()
+    
     init() {
         userSession = Auth.auth().currentUser
         fetchUser()
@@ -42,7 +44,7 @@ class AuthViewModel: ObservableObject {
             
             print("Successfully registered user...")
             
-            let data = ["email": email, "username": username, "uid": user.uid, "accountType": 1]
+            let data = ["email": email, "username": username, "uid": user.uid, "accountType": 1, "hasLiked": [""]]
             
             usersCollection.document(user.uid).setData(data) { _ in
                 self.userSession = user

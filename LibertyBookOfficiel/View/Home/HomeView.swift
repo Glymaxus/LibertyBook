@@ -46,11 +46,11 @@ struct HomeView: View {
                             }
                         }
                         .buttonStyle(PlainButtonStyle())
+                        .padding(.bottom, 50)
                         
                     }
                     .padding()
                 }
-                
             }
         }
         .onAppear {

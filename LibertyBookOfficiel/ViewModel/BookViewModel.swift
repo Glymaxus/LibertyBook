@@ -10,13 +10,15 @@ import FirebaseStorage
 
 class BookViewModel: ObservableObject {
     @Published var books = [Book]()
+    @Published var favoritesBooks = [Book]()
+    let DB = Firestore.firestore()
     
     init() {
         fetchBooks()
     }
     
     func fetchBooks() {
-        booksCollection.getDocuments { snapshot, error in
+        booksCollection.addSnapshotListener { snapshot, error in
             guard let documents = snapshot?.documents else { return }
             self.books = documents.compactMap({ try? $0.data(as: Book.self) })
         }
@@ -54,6 +56,39 @@ class BookViewModel: ObservableObject {
     //        }
     //
     //    }
+    
+    func addToFavorites(userId: String, book: Book, completion: @escaping(_ success: Bool) -> Void) {
+        DB.collection("users").document(userId).updateData(["hasLiked" : FieldValue.arrayUnion([book.name])])
+        self.favoritesBooks.append(book)
+        completion(true)
+    }
+    
+    func removeFromFavorites(userId: String, book: Book, completion: @escaping(_ success: Bool) -> Void) {
+        DB.collection("users").document(userId).updateData(["hasLiked" : FieldValue.arrayRemove([book.name])])
+        favoritesBooks.removeAll(where: { $0 == book })
+        completion(true)
+    }
+    
+    func fetchFavorites() {
+        self.favoritesBooks = []
+        guard let uid = AuthViewModel.shared.userSession?.uid else { return }
+        usersCollection.document(uid).getDocument { snapshot, error in
+            if let error = error {
+                print("Debug: error getting user : \(error.localizedDescription)")
+            }
+            
+            guard let document = snapshot else { return }
+            
+            guard let names = document.data()?["hasLiked"] as? [String] else { return }
+            
+            for name in names {
+                booksCollection.whereField("name", isEqualTo: name).addSnapshotListener { snapshot, error in
+                    guard let documents = snapshot?.documents else { return }
+                    self.favoritesBooks += documents.compactMap({ try? $0.data(as: Book.self) })
+                }
+            }
+        }
+    }
     
     func uploadImage(selectedImage: UIImage?, completion: @escaping(String) -> Void) {
         guard selectedImage != nil else { return }

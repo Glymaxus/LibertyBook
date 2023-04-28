@@ -7,7 +7,7 @@
 
 import FirebaseFirestoreSwift
 
-struct Book: Identifiable, Codable {
+struct Book: Identifiable, Codable, Equatable {
     @DocumentID var id: String?
     var image: String
     var name: String
@@ -16,5 +16,4 @@ struct Book: Identifiable, Codable {
     var chapters: [String]
     var audio: String
     var buyLink: String
-//    var summary: [String]
 }

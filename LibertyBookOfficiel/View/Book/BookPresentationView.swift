@@ -11,6 +11,9 @@ import Kingfisher
 struct BookPresentationView: View {
     var book: Book
     @State var isLiked = false
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var bookViewModel: BookViewModel
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color("ColorBlueLight"), Color("ColorBlueDark")]), startPoint: .top, endPoint: .bottom)
@@ -25,8 +28,8 @@ struct BookPresentationView: View {
                         .frame(width: 150, height: 200)
                     
                     VStack(alignment: .leading) {
-                            Text(book.name)
-                                .font(.custom("Oswald-Medium", size: 28))
+                        Text(book.name)
+                            .font(.custom("Oswald-Medium", size: 28))
                             .foregroundColor(.white)
                         
                         Text(book.author)
@@ -91,13 +94,38 @@ struct BookPresentationView: View {
                     .background(Color("ColorBlueLight"))
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
+                .padding(.bottom, 40)
             }
             .padding(8)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    isLiked.toggle()
+                    if bookViewModel.favoritesBooks != [] {
+                        for book in bookViewModel.favoritesBooks {
+                            if self.book == book  {
+                                bookViewModel.removeFromFavorites(userId: authViewModel.currentUser?.id ?? "", book: self.book, completion: { success in
+                                    
+                                    if success {
+                                        isLiked = false
+                                    }
+                                })
+                                
+                            } else {
+                                bookViewModel.addToFavorites(userId: authViewModel.currentUser?.id ?? "", book: self.book, completion: { success in
+                                    if success {
+                                        isLiked = true
+                                    }
+                                })
+                            }
+                        }
+                    } else {
+                        bookViewModel.addToFavorites(userId: authViewModel.currentUser?.id ?? "", book: self.book, completion: { success in
+                            if success {
+                                isLiked = true
+                            }
+                        })
+                    }
                 } label: {
                     Image(systemName: isLiked ? "heart.fill" : "heart")
                         .resizable()
